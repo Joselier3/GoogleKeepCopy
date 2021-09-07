@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/note_layout"
     android:layout_width="match_parent"
+    android:layout_margin="5dp"
     android:layout_height="wrap_content"
+    android:background="@drawable/rounded_border"
+    android:elevation="3dp"
     android:paddingHorizontal="24dp"
     android:paddingTop="24dp">
 
@@ -29,7 +32,7 @@
         android:id="@+id/tags_row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="24dp"
+        android:layout_marginVertical="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
