@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="KeepCopy">
+        <menu>
+            <item
+                android:id="@+id/tab_notes"
+                android:title="Notes" />
+        </menu>
+    </item>
+    
+    <item android:title="Tags">
+        <menu>
+            <item
+                android:id="@+id/tab_label1"
+                android:title="Label 1" />
+            <item
+                android:id="@+id/tab_label2"
+                android:title="Label 2" />
+        </menu>
+    </item>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/tab_archive"
+                android:title="Archive" />
+        </menu>
+    </item>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/tab_settings"
+                android:title="Settings" />
+        </menu>
+    </item>
+
+
+</menu>
