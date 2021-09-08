@@ -13,5 +13,7 @@ data class Note(
     @ColumnInfo
     val note: String,
     @ColumnInfo(name = "tag_id")
-    val tagId: Int
+    val tagId: Int,
+    @ColumnInfo(name = "is_pinned")
+    val isPinned: Boolean
 )
