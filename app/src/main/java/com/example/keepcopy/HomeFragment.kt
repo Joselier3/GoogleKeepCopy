@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
+import androidx.navigation.fragment.findNavController
 import com.example.keepcopy.database.Note
 import com.example.keepcopy.database.NoteRoomDatabase
 import com.example.keepcopy.databinding.FragmentHomeBinding
@@ -29,6 +30,13 @@ class HomeFragment : Fragment() {
         binding.btnDrawer.setOnClickListener { (activity as MainActivity).openDrawer() }
         setAdapter()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.addNoteFab.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_addNoteFragment)
+        }
     }
 
     private fun setAdapter() {
