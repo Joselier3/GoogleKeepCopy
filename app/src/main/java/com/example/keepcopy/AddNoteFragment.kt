@@ -1,6 +1,7 @@
 package com.example.keepcopy
 
 import android.content.Context
+import android.inputmethodservice.InputMethodService
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.keepcopy.databinding.FragmentAddNoteBinding
 import com.example.keepcopy.viewmodels.KeepCopyViewModel
 import com.example.keepcopy.viewmodels.KeepCopyViewModelFactory
+import androidx.appcompat.app.AppCompatActivity
 
 class AddNoteFragment : Fragment() {
 
@@ -33,6 +35,7 @@ class AddNoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.titleField.showKeyboard()
     }
 
     override fun onDestroyView() {
@@ -43,4 +46,10 @@ class AddNoteFragment : Fragment() {
         inputMethodManager.hideSoftInputFromWindow(requireActivity().currentFocus?.windowToken, 0)
         _binding = null
     }
+}
+
+fun View.showKeyboard() {
+    requestFocus()
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
 }
