@@ -8,6 +8,6 @@ import androidx.room.PrimaryKey
 data class Tag(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    @ColumnInfo(name = "title")
+    @ColumnInfo(name = "tag_title")
     val tagTitle: String
 )

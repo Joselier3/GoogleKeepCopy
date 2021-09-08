@@ -14,7 +14,7 @@ interface NoteDao {
     @Delete
     suspend fun delete(note: Note)
 
-    @Query("SELECT note.id, note.title, note.note, note.is_pinned ,tag.title " +
+    @Query("SELECT note.id, note.note_title, note.note, note.is_pinned ,tag.tag_title " +
             "FROM note " +
             "JOIN tag " +
             "ON note.tag_id = tag_id")
