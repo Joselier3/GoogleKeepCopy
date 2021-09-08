@@ -6,4 +6,5 @@
     <string name="title">Title</string>
     <string name="note">Note</string>
     <string name="search">Search your notes</string>
+    <string name="pin_note">Pin Note</string>
 </resources>
