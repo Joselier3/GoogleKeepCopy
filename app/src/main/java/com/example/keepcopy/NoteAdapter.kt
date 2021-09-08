@@ -7,9 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.keepcopy.database.FinalNote
 import com.example.keepcopy.database.Note
 
-class NoteAdapter: ListAdapter<Note, NoteVH>(NoteComparator()) {
+class NoteAdapter: ListAdapter<FinalNote, NoteVH>(NoteComparator()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteVH {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.note_item_layout, parent, false)
         return NoteVH(view)
@@ -24,19 +25,19 @@ class NoteVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val title: TextView = itemView.findViewById(R.id.note_title)
     val detail: TextView = itemView.findViewById(R.id.note_details)
 
-    fun bind(note: Note) {
+    fun bind(note: FinalNote) {
         title.text = note.noteTitle
         detail.text = note.note
 
     }
 
 }
-class NoteComparator : DiffUtil.ItemCallback<Note>() {
-    override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean {
+class NoteComparator : DiffUtil.ItemCallback<FinalNote>() {
+    override fun areItemsTheSame(oldItem: FinalNote, newItem: FinalNote): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: Note, newItem: Note): Boolean {
+    override fun areContentsTheSame(oldItem: FinalNote, newItem: FinalNote): Boolean {
         return oldItem.id == newItem.id
     }
 
