@@ -13,6 +13,7 @@ import com.example.keepcopy.databinding.FragmentAddNoteBinding
 import com.example.keepcopy.viewmodels.KeepCopyViewModel
 import com.example.keepcopy.viewmodels.KeepCopyViewModelFactory
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 
 class AddNoteFragment : Fragment() {
 
@@ -28,14 +29,17 @@ class AddNoteFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAddNoteBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.appbar.outlineProvider = null
         binding.titleField.showKeyboard()
+        binding.toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
     override fun onDestroyView() {

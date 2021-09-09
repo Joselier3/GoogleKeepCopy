@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.keepcopy.databinding.ActivityMainBinding
@@ -20,8 +21,13 @@ class MainActivity : AppCompatActivity() {
         // assigning ID of the toolbar to a variable
         val toolbar = findViewById<View>(R.id.toolbar) as? Toolbar
 
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
         // using toolbar as ActionBar
         setSupportActionBar(toolbar)
+        
     }
 
     fun openDrawer() {
