@@ -14,11 +14,11 @@ class KeepCopyViewModel(private val noteDao: NoteDao) : ViewModel() {
 
     fun addNote(note: FinalNote) {
         viewModelScope.launch {
-            val tagId = noteDao.getTagId(note.noteTag)
-            val newNote: Note = Note(
+            val newNote = Note(
+                id = 0,
                 noteTitle = note.noteTitle,
                 note = note.note,
-                tagId = tagId,
+                tagId = 0,
                 isPinned = note.isPinned
             )
             noteDao.insert(newNote)
