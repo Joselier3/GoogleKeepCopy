@@ -19,4 +19,7 @@ interface NoteDao {
             "JOIN tag " +
             "ON note.tag_id = tag_id")
     fun allNotes(): Flow<List<FinalNote>>
+
+    @Query("SELECT tag.id FROM tag WHERE tag.tag_title = :tagTitle")
+    fun getTagId(tagTitle: String): Int
 }
