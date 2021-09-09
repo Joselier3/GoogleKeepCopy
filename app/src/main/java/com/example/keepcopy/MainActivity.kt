@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setBackgroundDrawable(null)
     }
 
     override fun onSupportNavigateUp(): Boolean {
