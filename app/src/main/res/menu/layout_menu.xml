@@ -2,9 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_pin"
+    <item android:id="@+id/action_pin_note"
         android:title="@string/pin_note"
         android:icon="@drawable/ic_pin_note"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_add_notification"
+        android:title="@string/add_notification"
+        android:icon="@drawable/ic_bell"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_archive_note"
+        android:title="@string/archive"
+        android:icon="@drawable/ic_archive"
         app:showAsAction="always"/>
 
 </menu>
