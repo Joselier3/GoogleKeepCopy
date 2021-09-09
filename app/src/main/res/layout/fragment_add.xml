@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.AddFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:textStyle="bold"
+                android:textSize="36sp"
+                android:id="@+id/new_title"
+                style="@style/edit_text_padding" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Note"
+                android:gravity="start"
+                android:id="@+id/new_note"
+                android:background="@android:color/transparent"
+                android:textSize="24sp"
+                style="@style/edit_text_padding" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</layout>
