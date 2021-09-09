@@ -7,6 +7,7 @@
     <string name="note">Note</string>
     <string name="search">Search your notes</string>
     <string name="pin_note">Pin Note</string>
-    <string name="archive">Archive</string>
+    <string name="archive">Archive Note</string>
     <string name="add_notification">Add Notification</string>
+    <string name="save">Save Note</string>
 </resources>

@@ -1,25 +1,43 @@
 package com.example.keepcopy
 
 import android.content.Context
-import android.inputmethodservice.InputMethodService
 import android.os.Bundle
 import android.view.*
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.keepcopy.database.FinalNote
 import com.example.keepcopy.databinding.FragmentAddNoteBinding
 import com.example.keepcopy.viewmodels.KeepCopyViewModel
 import com.example.keepcopy.viewmodels.KeepCopyViewModelFactory
-import androidx.appcompat.app.AppCompatActivity
 
 class AddNoteFragment : Fragment() {
-
     private var _binding: FragmentAddNoteBinding? = null
     private val binding get() = _binding!!
+
     private val viewModel: KeepCopyViewModel by activityViewModels {
         KeepCopyViewModelFactory(
             (activity?.application as KeepCopyApplication).database.noteDao()
         )
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId) {
+        R.id.action_save -> {
+            val note = FinalNote(
+                id = 0,
+                noteTitle = binding.titleField.text.toString(),
+                note = binding.noteField.text.toString(),
+                isPinned = false,
+                noteTag = "test_tag"
+            )
+            viewModel.addNote(note)
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -36,7 +54,7 @@ class AddNoteFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAddNoteBinding.inflate(inflater, container, false)
         return binding.root
     }
