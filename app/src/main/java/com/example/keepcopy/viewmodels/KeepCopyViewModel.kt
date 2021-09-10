@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class KeepCopyViewModel(private val noteDao: NoteDao) : ViewModel() {
-    fun getAllNotes(): Flow<List<Note>> = noteDao.allNotesTest()
+    fun getAllNotes(): Flow<List<FinalNote>> = noteDao.allNotesTest()
 
     fun addNote(note: FinalNote) {
         viewModelScope.launch {
