@@ -12,7 +12,7 @@ data class FinalNote (
     @ColumnInfo(name = "is_pinned")
     val isPinned: Boolean,
     @ColumnInfo(name = "tag_title")
-    val noteTag: String
+    val noteTag: String?
 )
 
 fun FinalNote.isPinned(): Boolean = isPinned

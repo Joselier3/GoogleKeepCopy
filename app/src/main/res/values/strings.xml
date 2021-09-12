@@ -3,4 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_new_note_button">Add New Note Button</string>
+    <string name="title">Title</string>
+    <string name="note">Note</string>
+    <string name="search">Search your notes</string>
+    <string name="pin_note">Pin Note</string>
+    <string name="archive">Archive Note</string>
+    <string name="add_notification">Add Notification</string>
+    <string name="save">Save Note</string>
 </resources>

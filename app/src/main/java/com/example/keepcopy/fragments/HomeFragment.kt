@@ -5,9 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.example.keepcopy.database.Note
 import com.example.keepcopy.MainActivity
 import com.example.keepcopy.NoteAdapter
 import com.example.keepcopy.R
@@ -30,6 +35,15 @@ class HomeFragment : Fragment() {
         binding.btnDrawer.setOnClickListener { (activity as MainActivity).openDrawer() }
         setAdapter()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
+        binding.addNoteFab.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_addNoteFragment)
+        }
     }
 
     private fun setAdapter() {
